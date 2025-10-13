@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EcoVida - Proyecto Ecológico</title>
+<link rel="stylesheet" href="ecologico.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">EV</div>
+      <div>
+        <h1>EcoVida</h1>
+        <div style="font-size:0.8rem; color:#dff6e9;">Proyecto ecológico • Vida sostenible</div>
+      </div>
+    </div>
+
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#main">Secciones</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <section id="hero" class="hero" role="banner">
+    <h2>Salvemos el planeta juntos 🌍</h2>
+    <p>Un futuro verde empieza con nuestras decisiones de hoy. Únete a EcoVida y descubre cómo pequeñas acciones crean grandes cambios.</p>
+  </section>
+  <main id="main" role="main">
+    <div class="windows">
+      <aside class="win-list" aria-label="Secciones">
+        <div class="win-item active" data-panel="sobre" onclick="selectPanel(event)">
+          <div class="icon">S</div>
+          <div>
+            <h4>Sobre Nosotros</h4>
+            <p>¿Quiénes somos y qué hacemos?</p>
+          </div>
+        </div>
+
+        <div class="win-item" data-panel="beneficios" onclick="selectPanel(event)">
+          <div class="icon">B</div>
+          <div>
+            <h4>Beneficios</h4>
+            <p>Razones para unirte al cambio</p>
+          </div>
+        </div>
+
+        <div class="win-item" data-panel="testimonios" onclick="selectPanel(event)">
+          <div class="icon">T</div>
+          <div>
+            <h4>Testimonios</h4>
+            <p>Historias reales de impacto</p>
+          </div>
+        </div>
+
+        <div class="win-item" data-panel="eco" onclick="selectPanel(event)">
+          <div class="icon">E</div>
+          <div>
+            <h4>Orgánico vs No Orgánico</h4>
+            <p>Explora a fondo </p>
+          </div>
+        </div>
+
+        <div class="win-item" data-panel="contacto" onclick="selectPanel(event)">
+          <div class="icon">C</div>
+          <div>
+            <h4>Contacto</h4>
+            <p>Escríbenos y únete</p>
+          </div>
+        </div>
+      </aside>
+
+      
+      <section class="win-panel" aria-live="polite">
+
+        <article id="sobre" class="panel active" aria-labelledby="sobre-title">
+          <h2 id="sobre-title">¿Quiénes somos?</h2>
+          <p style="margin-top:0.6rem;">
+            EcoVida nace como un proyecto comunitario para promover prácticas sostenibles: agricultura responsable, reducción de residuos, consumo consciente y educación ambiental. Trabajamos con productores locales y ofrecemos talleres para toda la comunidad.
+          </p>
+          <div style="margin-top:1rem;">
+            <strong>Misión:</strong> Fomentar hábitos que cuiden la salud humana y la del planeta.<br>
+            <strong>Visión:</strong> Comunidades prósperas que vivan en equilibrio con la naturaleza.
+          </div>
+        </article>
+
+        <article id="beneficios" class="panel" aria-labelledby="beneficios-title">
+          <h2 id="beneficios-title">Beneficios de ser parte 🍀</h2>
+          <div class="benefit-grid" style="margin-top:1rem;">
+            <div class="benefit-card">
+              <h3>🌱 Salud natural</h3>
+              <p>Productos cultivados sin pesticidas sintéticos; mejor para tu cuerpo y el de tu familia.</p>
+            </div>
+            <div class="benefit-card">
+              <h3>🌍 Cuidado del planeta</h3>
+              <p>Menos químicos, menos contaminación y más biodiversidad en nuestra tierra.</p>
+            </div>
+            <div class="benefit-card">
+              <h3>🤝 Comunidad</h3>
+              <p>Apoyas a pequeños productores y generas economía local sostenible.</p>
+            </div>
+            <div class="benefit-card">
+              <h3>♻️ Menos residuos</h3>
+              <p>Prácticas que reducen plásticos y fomentan el reciclaje y compostaje.</p>
+            </div>
+          </div>
+        </article>
+
+        <article id="testimonios" class="panel" aria-labelledby="testi-title">
+          <h2 id="testi-title">Lo que dicen de nosotros 💚</h2>
+
+          <div class="testi-wrap" style="margin-top:1rem;">
+            <div class="testi-slider" id="testiSlider" role="region" aria-label="Testimonios">
+              <div class="testi-slide active">
+                <p>"Gracias a EcoVida aprendí a reducir mi consumo de plástico y ahora mi familia está más sana." </p>
+                <div class="testi-meta">— María G.</div>
+              </div>
+              <div class="testi-slide">
+                <p>"Participé en un taller de jardinería urbana y cambié por completo mi forma de comprar alimentos." </p>
+                <div class="testi-meta">— Carlos P.</div>
+              </div>
+              <div class="testi-slide">
+                <p>"Los productos orgánicos que conseguimos en el mercado comunitario son de excelente calidad." </p>
+                <div class="testi-meta">— Sofía R.</div>
+              </div>
+
+              <div class="arrow left" onclick="slidePrev()" aria-hidden="true">◀</div>
+              <div class="arrow right" onclick="slideNext()" aria-hidden="true">▶</div>
+            </div>
+
+            <div class="testi-controls" style="margin-top:0.8rem;">
+              <div class="dot active" data-index="0" onclick="goToSlide(0)"></div>
+              <div class="dot" data-index="1" onclick="goToSlide(1)"></div>
+              <div class="dot" data-index="2" onclick="goToSlide(2)"></div>
+            </div>
+          </div>
+        </article>
+
+        <article id="eco" class="panel" aria-labelledby="eco-title">
+          <div class="eco-block">
+            <div class="eco-header">
+              <h2 id="eco-title">Orgánico vs No Orgánico </h2>
+              <div class="eco-switch" role="tablist" aria-label="Selecciona Orgánico o No Orgánico">
+                <button class="org" aria-pressed="true" onclick="setEco('org')">🌱 Orgánico</button>
+                <button class="noorg" aria-pressed="false" onclick="setEco('noorg')">🚫 No orgánico</button>
+              </div>
+            </div>
+
+            <p style="margin-top:0.2rem; color:#2e6b4f;">Explora ejemplos y aprende por qué elegir orgánico puede marcar la diferencia.</p>
+
+            <div class="eco-content" id="ecoContent">
+              <div id="eco-org" class="eco-section" data-type="org">
+                <div class="eco-cards">
+                  <div class="eco-card" onclick="selectEcoCard(this, 'org-frutas')">
+                    <div class="thumb"><img src="verdura.jpg" alt="Frutas orgánicas"></div>
+                    <h4>Frutas y verduras orgánicas</h4>
+                    <p>Sin pesticidas sintéticos; más nutrientes y mejor sabor.</p>
+                  </div>
+
+                  <div class="eco-card" onclick="selectEcoCard(this, 'org-semillas')">
+                    <div class="thumb"><img src="1" alt="Semillas organicas"></div>
+                    <h4>Semillas y cultivos</h4>
+          <p>Promueven la biodiversidad y ayudan a conservar variedades locales.</p>
+                  </div>
+                  <div class="eco-card" onclick="selectEcoCard(this, 'org-compost')">
+        <div class="thumb"><img src="compostaje,jpg.webp" alt="Compost organico"></div>
+          <h4>Compostaje</h4>
+                    <p>Transforma residuos en alimento para la tierra: cierra el ciclo natural.</p>
+                  </div>
+                </div>
+
+                <div id="eco-detail-org" class="eco-detail">
+                  <h3 id="eco-detail-title">Frutas y verduras orgánicas</h3>
+                  <p id="eco-detail-body">Cultivadas sin pesticidas ni fertilizantes sintéticos. Beneficios: mejor perfil nutricional, menor exposición a químicos y apoyo a prácticas agrícolas sostenibles.</p>
+                </div>
+              </div>
+              <div id="eco-noorg" class="eco-section" data-type="noorg" style="display:none;">
+                <div class="eco-cards">
+                  <div class="eco-card" onclick="selectEcoCard(this, 'noorg-plastico')">
+                    <div class="thumb"><img src="2.jpg" alt="Plastico"></div>
+                    <h4>Envases de plástico desechable</h4>
+                    <p>Gran fuente de residuos; tardan siglos en degradarse.</p>
+                  </div>
+
+                  <div class="eco-card" onclick="selectEcoCard(this, 'noorg-eWaste')">
+                    <div class="thumb"><img src="basura.jpg" alt="Basura electronica"></div>
+                    <h4>Basura electrónica</h4>
+                    <p>Contiene metales pesados que contaminan suelos y aguas.</p>
+                  </div>
+
+                  <div class="eco-card" onclick="selectEcoCard(this, 'noorg-fert')">
+                    <div class="thumb"><img src="3.jpg" alt="Fertilizantes quimicos"></div>
+                    <h4>Fertilizantes & pesticidas químicos</h4>
+                    <p>Afectan la fauna del suelo y pueden contaminar aguas subterráneas.</p>
+                  </div>
+                </div>
+
+                <div id="eco-detail-noorg" class="eco-detail">
+                  <h3 id="eco-detail-title-noorg">Envases de plástico desechable</h3>
+                  <p id="eco-detail-body-noorg">Los envases plásticos son convenientes pero generan enormes cantidades de residuos. Soluciones: reutilizar, evitar de un solo uso, y optar por alternativas biodegradables.</p>
+                </div>
+              </div>
+            </div> 
+
+          </div>
+        </article>
+
+        
+        <article id="contacto" class="panel" aria-labelledby="contacto-title">
+          <h2 id="contacto-title">Contáctanos 📩</h2>
+          <p style="margin-top:0.5rem;">¿Tienes dudas o quieres sumarte? Déjanos tu mensaje y te responderemos pronto.</p>
+
+          <form class="contact-form" onsubmit="handleSubmit(event)" style="margin-top:0.8rem;">
+            <input type="text" id="name" placeholder="Tu nombre" required />
+            <input type="email" id="email" placeholder="Tu correo" required />
+            <textarea id="message" rows="5" placeholder="Tu mensaje..." required></textarea>
+            <div style="display:flex; gap:0.6rem; justify-content:center; margin-top:0.4rem;">
+              <button class="btn btn-primary" type="submit">Enviar</button>
+              <button type="button" class="btn btn-ghost" onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'})">Volver al inicio</button>
+            </div>
+          </form>
+        </article>
+
+      </section>
+    </div>
+  </main>
+ 
+<a href="https://www.instagram.com/eco.vidagt?igsh=MTY4aTd0cGhqZ3dkdg==" 
+   class="floating-btn instagram" 
+   target="_blank" 
+   aria-label="Instagram">
+  <img src="ig.jpg" alt="Instagram" class="icon-img" height="50" />
+</a>
+
+
+<a href="https://www.facebook.com/share/1Fj9beAVRR/?mibextid=wwXIfr" 
+   class="floating-btn facebook" 
+   target="_blank" 
+   aria-label="Facebook">
+  <img src="face.jpg" alt="Facebook" class="icon-img" height="50" />
+</a>
+ 
+  <footer role="contentinfo">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p style="margin-bottom:0.5rem;"><strong>EcoVida</strong> — Proyecto ecológico </p>
+      <p style="font-size:0.85rem; margin-top:0.8rem; opacity:0.8;">&copy; 2025 EcoVida. Todos los derechos reservados.</p>
+    </div>
+    
+  </footer>
+  
+<script src="ecologico.js"></script>
+</body>
+</html>
